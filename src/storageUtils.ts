@@ -5,7 +5,7 @@ import { LogTypes, StorageTypes } from '@requestnetwork/types';
  * Get the request chain storage with values from env
  * @returns request chain storage object
  */
-export function getRequestChainStorage(): EthereumStorage {
+export function getRequestChainStorage(): RequestChainStorage {
 
   requestChainOptionsTest = {
     restUrl: 'http://localhost:1317',
