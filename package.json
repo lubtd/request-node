@@ -26,7 +26,6 @@
     "start": "ts-node src/server.ts",
     "start:watch": "ts-node-dev src/server.ts",
     "clean": "shx rm -rf dist",
-    "lint": "tslint --project .",
   },
   "dependencies": {
     "@requestnetwork/data-access": "0.4.1",
