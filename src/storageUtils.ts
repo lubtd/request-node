@@ -1,13 +1,12 @@
-import { RequestChainStorage } from 'request-chain-storage';
-import { LogTypes, StorageTypes } from '@requestnetwork/types';
+const request_chain_storage = require('request-chain-storage');
 
 /**
  * Get the request chain storage with values from env
  * @returns request chain storage object
  */
-export function getRequestChainStorage(): RequestChainStorage {
+export function getRequestChainStorage(): any {
 
-  requestChainOptionsTest = {
+  const requestChainOptionsTest = {
     restUrl: 'http://localhost:1317',
     chainId: 'wacken',
     accountNumber: '0',
@@ -17,5 +16,5 @@ export function getRequestChainStorage(): RequestChainStorage {
     gas: '200000',
   }
 
-  return new RequestChainStorage(requestChainOptionsTest);
+  return new request_chain_storage.RequestChainStorage(requestChainOptionsTest);
 }

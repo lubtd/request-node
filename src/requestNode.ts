@@ -7,7 +7,7 @@ import * as httpStatus from 'http-status-codes';
 import KeyvFile from 'keyv-file';
 
 import Utils from '@requestnetwork/utils';
-import { getCustomHeaders, getInitializationStorageFilePath, getMnemonic } from './config';
+import { getCustomHeaders, getInitializationStorageFilePath } from './config';
 import getChannelsByTopic from './request/getChannelsByTopic';
 import getTransactionsByChannelId from './request/getTransactionsByChannelId';
 import persistTransaction from './request/persistTransaction';

@@ -11,14 +11,8 @@ const logger = new Logger(logLevel, logMode);
 
 const startNode = async (): Promise<void> => {
   const serverMessage = `Using config:
-  Ethereum network id: ${config.getStorageNetworkId()}
   Log Level: ${LogTypes.LogLevel[config.getLogConfig().logLevel]}
   Log Mode: ${config.getLogConfig().logMode}
-  Web3 provider url: ${config.getStorageWeb3ProviderUrl()}
-  IPFS host: ${config.getIpfsHost()}
-  IPFS port: ${config.getIpfsPort()}
-  IPFS protocol: ${config.getIpfsProtocol()}
-  IPFS timeout: ${config.getIpfsTimeout()}
   Storage concurrency: ${config.getStorageConcurrency()}
   Initialization storage path: ${config.getInitializationStorageFilePath()}
 `;

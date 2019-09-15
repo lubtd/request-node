@@ -1,4 +1,4 @@
-import { LogTypes, StorageTypes } from '@requestnetwork/types';
+import { LogTypes } from '@requestnetwork/types';
 import { argv } from 'yargs';
 import { modeType } from './logger';
 
