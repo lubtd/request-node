@@ -47,6 +47,7 @@ export default async function persistTransaction(
 
       serverResponse.status(httpStatus.OK).send(dataAccessResponse);
     } catch (e) {
+      console.log(e)
       logger.error(`persistTransaction error: ${e}`);
       logger.debug(`persistTransaction fail`, ['metric', 'successRate']);
 

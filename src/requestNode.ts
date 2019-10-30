@@ -76,7 +76,14 @@ class RequestNode {
     this.logger.info('Node initialization');
     const initializationStartTime: number = Date.now();
 
+    const sleep = (ms: number) => {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
     try {
+      // Wait a few second for the other server
+      // TODO: Retry in a interval the function
+      await sleep(10000);
       await this.dataAccess.initialize();
     } catch (error) {
       this.logger.error(`Node failed to initialize`);

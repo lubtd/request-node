@@ -1,0 +1,23 @@
+version: '3'
+services:
+  request-chain-daemon:
+    expose:
+      - "26657"
+    image: ltacker/request-chain
+    command: ["rcd", "start"]
+  request-chain-cli:
+    expose:
+      - "1317"
+    image: ltacker/request-chain
+    command: ["rccli", "rest-server", "--trust-node", '--laddr=tcp://0.0.0.0:1317']
+    links:
+      - "request-chain-daemon:rcd"
+  request-node:
+    expose:
+      - "3000"
+    image: ltacker/request-node
+    command: ["node", "dist/server.js"]
+    ports:
+      - "3000:3000"
+    links:
+      - "request-chain-cli:rccli"

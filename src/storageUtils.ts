@@ -7,12 +7,12 @@ const request_chain_storage = require('request-chain-storage');
 export function getRequestChainStorage(): any {
 
   const requestChainOptionsTest = {
-    restUrl: 'http://localhost:1317',
+    restUrl: 'http://rccli:1317',
     chainId: 'wacken',
     accountNumber: '0',
     accountName: 'pierre',
-    accountPassword: 'aaaaaaaa',
-    accountAddress: 'cosmos1z9nmdk7emrr5h92hws8gmssy8zc6h0tx68awpp',
+    accountPassword: 'hahahaha',
+    accountAddress: 'cosmos1en2n7qy77su9c8uw8hgecvfg8czdrfpu2x5qxl',
     gas: '200000',
   }
 
