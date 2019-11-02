@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: /usr/local/Cellar/kompose/1.19.0/bin/kompose convert
+    kompose.version: 1.19.0 ()
+  creationTimestamp: null
+  labels:
+    io.kompose.service: request-chain-daemon
+  name: request-chain-daemon
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: /usr/local/Cellar/kompose/1.19.0/bin/kompose convert
+        kompose.version: 1.19.0 ()
+      creationTimestamp: null
+      labels:
+        io.kompose.service: request-chain-daemon
+    spec:
+      containers:
+      - args:
+        - rcd
+        - start
+        image: ltacker/request-chain
+        name: request-chain-daemon
+        resources: {}
+      restartPolicy: Always
+status: {}
