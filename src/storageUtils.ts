@@ -9,10 +9,10 @@ export function getRequestChainStorage(): any {
   const requestChainOptionsTest = {
     restUrl: 'http://rccli:1317',
     chainId: 'wacken',
-    accountNumber: '0',
-    accountName: 'pierre',
+    accountNumber: '1',
+    accountName: 'perrine',
     accountPassword: 'hahahaha',
-    accountAddress: 'cosmos1en2n7qy77su9c8uw8hgecvfg8czdrfpu2x5qxl',
+    accountAddress: 'cosmos1vfpdz6wpyq7f6qw843t2qehqmf42f2fuc7u9n3',
     gas: '200000',
   }
 

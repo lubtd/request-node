@@ -3,19 +3,19 @@ services:
   request-chain-daemon:
     expose:
       - "26657"
-    image: ltacker/request-chain
-    command: ["rcd", "start"]
+    image: request-chain
+    command: ["rcd", "start", "--minimum-gas-prices", "0.0001stake"]
   request-chain-cli:
     expose:
       - "1317"
-    image: ltacker/request-chain
+    image: request-chain
     command: ["rccli", "rest-server", "--trust-node", '--laddr=tcp://0.0.0.0:1317']
     links:
       - "request-chain-daemon:rcd"
   request-node:
     expose:
       - "3000"
-    image: ltacker/request-node
+    image: request-node
     command: ["node", "dist/server.js"]
     ports:
       - "3000:3000"
