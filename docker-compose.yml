@@ -4,7 +4,7 @@ services:
     expose:
       - "26657"
     image: request-chain
-    command: ["rcd", "start", "--minimum-gas-prices", "0.0001stake"]
+    command: ["rcd", "start", "--minimum-gas-prices", "0.0001stake", "--rpc.laddr", "tcp://0.0.0.0:26657"]
   request-chain-cli:
     expose:
       - "1317"

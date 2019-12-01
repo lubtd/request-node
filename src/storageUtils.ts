@@ -12,7 +12,7 @@ export function getRequestChainStorage(): any {
     accountNumber: '1',
     accountName: 'perrine',
     accountPassword: 'hahahaha',
-    accountAddress: 'cosmos1vfpdz6wpyq7f6qw843t2qehqmf42f2fuc7u9n3',
+    accountAddress: 'cosmos1xnvwlt8zh6s0gg9vnxw2yj2vxdn070kt7v9akf',
     gas: '200000',
   }
 
