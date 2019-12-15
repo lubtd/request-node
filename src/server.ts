@@ -5,6 +5,9 @@ import * as config from './config';
 import Logger from './logger';
 import RequestNode from './requestNode';
 
+// Load environment variables from .env file (without overriding variables already set)
+require('dotenv').config();
+
 // Initialize the node logger
 const { logLevel, logMode } = config.getLogConfig();
 const logger = new Logger(logLevel, logMode);
@@ -13,7 +16,6 @@ const startNode = async (): Promise<void> => {
   const serverMessage = `Using config:
   Log Level: ${LogTypes.LogLevel[config.getLogConfig().logLevel]}
   Log Mode: ${config.getLogConfig().logMode}
-  Storage concurrency: ${config.getStorageConcurrency()}
   Initialization storage path: ${config.getInitializationStorageFilePath()}
 `;
 

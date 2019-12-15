@@ -2,9 +2,6 @@ import { LogTypes } from '@requestnetwork/types';
 import { argv } from 'yargs';
 import { modeType } from './logger';
 
-// Load environment variables from .env file (without overriding variables already set)
-require('dotenv').config();
-
 /**
  * This contains default values used for the server and storage initialization
  * when environment variable is not specified
@@ -53,30 +50,6 @@ export function getCustomHeaders(): object {
 }
 
 /**
- * Get network id of the Ethereum network from command line argument, environment variables or default values
- * @returns Ethereum network id
- */
-export function getStorageNetworkId(): number {
-  return (
-    (argv.networkId && Number(argv.networkId)) ||
-    (process.env.ETHEREUM_NETWORK_ID && Number(process.env.ETHEREUM_NETWORK_ID)) ||
-    defaultValues.ethereumStorage.ethereum.networkId
-  );
-}
-
-/**
- * Get Web3 provider url from command line argument, environment variables or default values
- * @returns Web3 provider url
- */
-export function getStorageWeb3ProviderUrl(): string {
-  return (
-    argv.providerUrl ||
-    process.env.WEB3_PROVIDER_URL ||
-    defaultValues.ethereumStorage.ethereum.web3ProviderUrl
-  );
-}
-
-/**
  * Get log configs: level and mode, from command line argument, environment variables or default values.
  * logLevel is the maximum level of messages we will log
  * logMode defines the log format to display: `human` is a more readable log, `machine` is better for parsing
@@ -105,32 +78,6 @@ export function getLastBlockNumberDelay(): number {
     argv.lastBlockNumberDelay ||
     process.env.LAST_BLOCK_NUMBER_DELAY ||
     defaultValues.ethereumStorage.lastBlockNumberDelay
-  );
-}
-
-/**
- * Get the number of concurrent calls the ethereum storage can make
- *
- * @returns the maximum concurrency number
- */
-export function getStorageConcurrency(): number {
-  return Number(
-    argv.storageMaxConcurrency ||
-      process.env.STORAGE_MAX_CONCURRENCY ||
-      defaultValues.ethereumStorage.maxConcurrency,
-  );
-}
-
-/**
- * Get the delay between subsequent Ethereum call retries
- *
- * @returns the delay between call retries
- */
-export function getEthereumRetryDelay(): number {
-  return (
-    argv.ethereumRetryDelay ||
-    process.env.ETHEREUM_RETRY_DELAY ||
-    defaultValues.ethereumStorage.retryDelay
   );
 }
 

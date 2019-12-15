@@ -17,6 +17,13 @@ services:
       - "3000"
     image: request-node
     command: ["node", "dist/server.js"]
+    environment:
+    - RCCLI_URL=http://rccli:1317
+    - CHAIN_ID=wacken
+    - ACCOUNT_NUMBER=1
+    - ACCOUNT_NAME=perrine
+    - ACCOUNT_PASSWORD=hahahaha
+    - ACCOUND_ADDRESS=cosmos1xnvwlt8zh6s0gg9vnxw2yj2vxdn070kt7v9akf
     ports:
       - "3000:3000"
     links:
